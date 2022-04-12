@@ -1,0 +1,92 @@
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+
+int main(){
+int MatrizA[20][20], MatrizB[20][20], MatrizRESULTADO[20][20];
+int filaPrimeraMatriz,columnaPrimeraMatriz,filaSegundaMatriz,columnaSegundaMatriz;
+cout<<"         PRIMERA MATRIZ"<<endl;
+cout<<"Digite la fila de la Matriz: "; cin>>filaPrimeraMatriz;
+cout<<"Digite la columna de la Matriz: "; cin>>columnaPrimeraMatriz;
+
+cout<<endl;
+cout<<"         SEGUNDA MATRIZ "<<endl;
+cout<<"Digite la fila de la matriz: "; cin>>filaSegundaMatriz;
+cout<<"Digite la columna de la matriz: "; cin>>columnaSegundaMatriz;
+
+if(columnaPrimeraMatriz==filaSegundaMatriz)
+{
+    cout<<endl;
+    cout<<"\n       Ingresando Datos"<<endl;
+ for(int a=0;a<filaPrimeraMatriz;a++)
+{
+    for(int b=0;b<columnaPrimeraMatriz;b++)
+    {
+        cout<<"Matriz A "<<"["<<a<<"]"<<"["<<b<<"]"<<": ";
+        cin>>MatrizA[a][b];
+
+    }
+}
+cout<<endl<<endl;
+ for(int a=0;a < filaSegundaMatriz; a++)
+{
+    for(int b=0;b<columnaSegundaMatriz;b++)
+    {
+        cout<<"Matriz B "<<"["<<a<<"]"<<"["<<b<<"]"<<": ";
+        cin>>MatrizB[a][b];
+
+    }
+}
+
+for(int a=0;a<filaPrimeraMatriz;a++)
+{
+    for(int b=0;b<columnaSegundaMatriz;b++)
+    {
+        MatrizRESULTADO[a][b]=0;
+        for(int c=0;c<columnaPrimeraMatriz;c++)
+        {
+            MatrizRESULTADO[a][b]=MatrizRESULTADO[a][b]+MatrizA[a][c]*MatrizB[c][b];
+        }
+    }
+}
+cout<<endl;
+
+cout<<"Mostrando la matriz"<<endl;
+for(int a=0;a<filaPrimeraMatriz;a++)
+{
+    for(int b=0;b<columnaPrimeraMatriz;b++)
+    {
+        cout<<MatrizA[a][b]<<" ";
+
+    }
+    cout<<"\n";
+}
+
+cout<<endl;
+ for(int a=0;a < filaSegundaMatriz; a++)
+{
+    for(int b=0;b<columnaSegundaMatriz;b++)
+    {
+
+        cout<<MatrizB[a][b]<<" ";
+
+    }
+    cout<<"\n";
+}
+cout<<endl;
+cout<<endl;
+cout<<"El resultado de multiplicar 2 matrices es: "<<endl;
+for(int a=0;a<filaPrimeraMatriz;a++)
+{for(int b=0; b<columnaSegundaMatriz;b++)
+{
+    cout<<MatrizRESULTADO[a][b]<<" ";
+}
+cout<<" \n";
+}
+}
+else{
+    cout<<" \nError!!! Nose puede multiplicar porque la columna y fila son diferentes.";
+}
+
+}
